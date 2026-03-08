@@ -53,6 +53,21 @@ themeConfig:
       bilibili:
       wechat:
       qq:
-      - name:
-        icon:
-        url:
+  header:
+    links:
+      - name: 首页
+        url: /
+      - name: 分类
+        url: /categories
+      - name: 标签
+        url: /tags
+  footer:
+    startYear: 2020
+    ICP:
+      detail:
+      url:
+      ico:
+    GAB:
+      detail:
+      url:
+      ico:

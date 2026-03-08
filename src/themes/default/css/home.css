@@ -112,7 +112,7 @@
 }
 
 .home-profile-info-icon {
-  @apply text-3xl w-10 text-center;
+  @apply text-3xl w-10 text-center text-zinc-400;
 }
 
 .home-profile-social {
@@ -122,7 +122,7 @@
 .home-profile-social-link {
   @apply w-14 h-14 rounded-full;
   @apply bg-zinc-800/50 backdrop-blur-md;
-  @apply flex items-center justify-center text-3xl;
+  @apply flex items-center justify-center text-3xl text-zinc-400;
   @apply no-underline transition-all duration-300;
 }
 
@@ -181,6 +181,24 @@
 
 .home-footer-copyright {
   @apply text-xl text-white/90;
+}
+
+.home-footer-links {
+  @apply flex gap-4;
+}
+
+.home-footer-link {
+  @apply text-base text-white/80;
+  @apply no-underline transition-opacity duration-300;
+  @apply flex items-center gap-1;
+}
+
+.home-footer-link:hover {
+  @apply opacity-80;
+}
+
+.home-footer-icon {
+  @apply w-4 h-4 align-middle inline-block;
 }
 
 /* 响应式设计 */

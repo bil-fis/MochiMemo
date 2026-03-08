@@ -1,0 +1,58 @@
+title: MochiMemo
+description: my project
+author: 林晚晚ss.
+logo: path/to/logo.png
+
+content:
+  local:
+    enabled:
+    postsDir: contents/posts
+    pagesDir: content/pages
+  git:
+    enabled:
+    platform: github
+    owner: your-name
+    repo: your-repo
+    labels:
+      post: post
+      page: page
+
+routes:
+  - path: /about
+    name: 关于
+    file: pages/about.md
+  - path: /welcome
+    name: 欢迎
+    issue:
+      slug: welcome
+  - path: /links
+    name: 友链
+    issue:
+      label: page:links
+  - path: /old
+    name: 老东西
+    issue:
+      number: 3
+
+theme: default
+plugins:
+  - name: seo
+    enabled:
+    options:
+
+themeConfig:
+  leftnav:
+    selfDescription: 你所love的，就是你的live
+    pos:
+    work:
+    school:
+    email:
+    avatar:
+    contacts:
+      github:
+      bilibili:
+      wechat:
+      qq:
+      - name:
+        icon:
+        url:

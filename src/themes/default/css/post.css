@@ -1,0 +1,181 @@
+.post-detail {
+  @apply w-full h-full;
+  @apply flex flex-col;
+}
+
+.post-title {
+  @apply flex items-center mb-6 relative;
+}
+
+.post-breadcrumb {
+  @apply flex items-center gap-2;
+  position: absolute;
+  left: 0;
+}
+
+.post-content-title {
+  @apply text-5xl font-bold text-zinc-50 mx-auto;
+}
+
+.post-breadcrumb-link {
+  @apply text-zinc-400 no-underline text-base transition-colors duration-300;
+}
+
+.post-breadcrumb-link:hover {
+  @apply text-zinc-200;
+}
+
+.post-breadcrumb-separator {
+  @apply text-zinc-600 text-sm;
+}
+
+.post-meta {
+  @apply flex items-center justify-center gap-6 mb-8;
+  @apply text-zinc-400 text-base;
+}
+
+.post-meta-item {
+  @apply flex items-center gap-2;
+}
+
+.post-meta-icon {
+  @apply text-xl;
+}
+
+.post-divider {
+  @apply w-full h-px bg-zinc-700 mb-8;
+}
+
+.post-content {
+  @apply flex-1;
+  @apply text-zinc-300 text-lg leading-loose;
+  @apply overflow-y-auto;
+}
+
+/* 美化滚动条 */
+.post-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.post-content::-webkit-scrollbar-track {
+  @apply bg-zinc-900/30 rounded-full;
+}
+
+.post-content::-webkit-scrollbar-thumb {
+  @apply bg-zinc-600/60 backdrop-blur-sm rounded-full;
+  transition: background-color 0.3s, backdrop-filter 0.3s;
+}
+
+.post-content::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-500/80 backdrop-blur-md;
+}
+
+/* Markdown 内容样式 */
+:deep(h1) {
+  @apply text-4xl font-bold text-zinc-50 mt-8 mb-4;
+}
+
+:deep(h2) {
+  @apply text-3xl font-bold text-zinc-100 mt-6 mb-3;
+}
+
+:deep(h3) {
+  @apply text-2xl font-bold text-zinc-200 mt-5 mb-2;
+}
+
+:deep(h4) {
+  @apply text-xl font-bold text-zinc-300 mt-4 mb-2;
+}
+
+:deep(p) {
+  @apply mb-4;
+}
+
+:deep(ul),
+:deep(ol) {
+  @apply ml-6 mb-4;
+}
+
+:deep(li) {
+  @apply mb-2;
+}
+
+:deep(code) {
+  @apply bg-zinc-800 px-2 py-1 rounded text-zinc-200 text-sm;
+}
+
+:deep(pre) {
+  @apply bg-zinc-900 p-4 rounded-lg mb-4 overflow-x-auto;
+}
+
+:deep(pre code) {
+  @apply bg-transparent px-0 py-0 text-sm;
+}
+
+:deep(blockquote) {
+  @apply border-l-4 border-zinc-600 pl-4 italic text-zinc-400 mb-4;
+}
+
+:deep(a) {
+  @apply text-violet-400 no-underline transition-colors duration-300;
+}
+
+:deep(a:hover) {
+  @apply text-violet-300 underline;
+}
+
+:deep(img) {
+  @apply rounded-lg my-4 max-w-full h-auto;
+}
+
+:deep(table) {
+  @apply w-full border-collapse mb-4;
+}
+
+:deep(th),
+:deep(td) {
+  @apply border border-zinc-700 px-4 py-2 text-left;
+}
+
+:deep(th) {
+  @apply bg-zinc-800 font-bold text-zinc-200;
+}
+
+:deep(tr:hover) {
+  @apply bg-zinc-800/50;
+}
+
+:deep(hr) {
+  @apply border-zinc-700 my-6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .post-content-title {
+    @apply text-3xl;
+  }
+
+  .post-meta {
+    @apply flex-wrap gap-4 text-sm;
+  }
+
+  .post-content {
+    @apply text-base;
+  }
+
+  :deep(h1) {
+    @apply text-2xl;
+  }
+
+  :deep(h2) {
+    @apply text-xl;
+  }
+
+  :deep(h3) {
+    @apply text-lg;
+  }
+
+  :deep(h4) {
+    @apply text-base;
+  }
+}

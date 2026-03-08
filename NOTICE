@@ -1,0 +1,138 @@
+# MochiMemo 开源软件声明
+
+本项目使用了以下开源软件和库，特此致谢：
+
+## 核心框架
+
+### Vue.js
+- 版本: ^3.5.25
+- 许可证: MIT License
+- 项目地址: https://github.com/vuejs/core
+- 版权声明: Copyright (c) 2013-present, Yuxi (Evan) You
+
+### Vue Router
+- 版本: ^5.0.3
+- 许可证: MIT License
+- 项目地址: https://github.com/vuejs/router
+- 版权声明: Copyright (c) 2013-present, Yuxi (Evan) You
+
+### Vite
+- 版本: ^7.3.1
+- 许可证: MIT License
+- 项目地址: https://github.com/vitejs/vite
+- 版权声明: Copyright (c) 2019-present, Yuxi (Evan) You and Vite contributors
+
+## TypeScript
+
+### TypeScript
+- 版本: ~5.9.3
+- 许可证: Apache License 2.0
+- 项目地址: https://github.com/Microsoft/TypeScript
+- 版权声明: Copyright (c) Microsoft Corporation
+
+## CSS 框架
+
+### UnoCSS
+- 版本: ^66.6.6
+- 许可证: MIT License
+- 项目地址: https://github.com/unocss/unocss
+- 版权声明: Copyright (c) 2021-present, Anthony Fu
+
+### UnoCSS Presets
+- @unocss/preset-attributify: ^66.6.6 (MIT License)
+- @unocss/preset-icons: ^66.6.6 (MIT License)
+- @unocss/preset-uno: ^66.6.6 (MIT License)
+- @unocss/preset-wind3: ^66.6.6 (MIT License)
+
+## Markdown 处理
+
+### markdown-it
+- 版本: ^14.1.1
+- 许可证: MIT License
+- 项目地址: https://github.com/markdown-it/markdown-it
+- 版权声明: Copyright (c) Vitaly Puzrin and Alex Kocharin
+
+### markdown-it-emoji
+- 版本: ^3.0.0
+- 许可证: MIT License
+- 项目地址: https://github.com/markdown-it/markdown-it-emoji
+- 版权声明: Copyright (c) Alex Kocharin
+
+### markdown-it-highlightjs
+- 版本: ^4.3.0
+- 许可证: MIT License
+- 项目地址: https://github.com/valeriangalliard/markdown-it-highlightjs
+- 版权声明: Copyright (c) Valérian Galliard
+
+### markdown-it-toc-done-right
+- 版本: ^4.2.0
+- 许可证: MIT License
+- 项目地址: https://github.com/nickbula/markdown-it-toc-done-right
+- 版权声明: Copyright (c) Nick Bula
+
+## 其他工具库
+
+### Axios
+- 版本: ^1.13.6
+- 许可证: MIT License
+- 项目地址: https://github.com/axios/axios
+- 版权声明: Copyright (c) 2014-present, Matt Zabriskie
+
+### js-yaml
+- 版本: ^4.1.1
+- 许可证: MIT License
+- 项目地址: https://github.com/nodeca/js-yaml
+- 版权声明: Copyright (c) 2011-2015, Vitaly Puzrin
+
+## 类型定义
+
+### @types/js-yaml
+- 版本: ^4.0.9
+- 许可证: MIT License
+- 项目地址: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+### @types/markdown-it
+- 版本: ^14.1.2
+- 许可证: MIT License
+- 项目地址: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+### @types/node
+- 版本: ^24.12.0
+- 许可证: MIT License
+- 项目地址: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+## 开发工具
+
+### @vitejs/plugin-vue
+- 版本: ^6.0.2
+- 许可证: MIT License
+- 项目地址: https://github.com/vitejs/vite-plugin-vue
+- 版权声明: Copyright (c) 2019-present, Yuxi (Evan) You
+
+### @vue/tsconfig
+- 版本: ^0.8.1
+- 许可证: MIT License
+- 项目地址: https://github.com/vuejs/tsconfig
+- 版权声明: Copyright (c) 2019-present, Yuxi (Evan) You
+
+### vue-tsc
+- 版本: ^3.1.5
+- 许可证: MIT License
+- 项目地址: https://github.com/vuejs/language-tools
+- 版权声明: Copyright (c) 2019-present, Yuxi (Evan) You
+
+## 许可证声明
+
+所有上述库均在其各自的许可证下发布，本项目完全遵守这些许可证的要求。
+
+- MIT License: https://opensource.org/licenses/MIT
+- Apache License 2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+如需查看完整的许可证文本，请访问各项目的官方仓库或上述链接。
+
+---
+
+**版权声明**
+
+本项目的主体代码采用 CC BY-NC-SA 4.0 许可证。
+详见 LICENSE 文件。

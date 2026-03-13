@@ -8,6 +8,7 @@ import type { SiteConfig } from './src/core/config/schema'
 import mochimemoThemePlugin from "./vite-plugin-mochimemo-theme"
 import mochimemoArticlesPlugin from "./vite-plugin-mochimemo-articles"
 import UnoCSS from '@unocss/vite'
+import {VitePWA} from "vite-plugin-pwa";
 
 function loadUserConfig(): SiteConfig {
   try {
@@ -54,9 +55,31 @@ const blogConfig = loadUserConfig()
 export default defineConfig({
   plugins: [
       vue(),
-  mochimemoThemePlugin(blogConfig.theme),
+      mochimemoThemePlugin(blogConfig.theme),
       mochimemoArticlesPlugin(blogConfig),
-      UnoCSS()
+      UnoCSS(),
+      VitePWA({
+        registerType: "autoUpdate",
+        devOptions: {
+          enabled: true
+        },
+        manifest: {
+          name: blogConfig.title,
+          short_name: blogConfig.title,
+          description: blogConfig.description,
+          display:"standalone",
+          scope:"/",
+          start_url:"/",
+          icons:[
+            {
+              src: "/pwa-icon.png",
+              sizes: "512x512",
+              type:"image/png"
+            }
+          ]
+        },
+      }),
+
   ],
   define: {
     __BLOG_CONFIG__: JSON.stringify(blogConfig),
@@ -65,5 +88,8 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
+  },
+  server:{
+    host: '0.0.0.0',
   },
 })

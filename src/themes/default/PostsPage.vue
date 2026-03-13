@@ -41,8 +41,8 @@ const getThumbnail = (articleItem: ArticleItem): string => {
   // 暂时使用默认占位图
   return 'data:image/svg+xml,' + encodeURIComponent(`
     <svg width="400" height="225" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="rgba(255,255,255,0.1)"/>
-      <text x="50%" y="50%" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="24">
+      <rect width="100%" height="100%" fill="#e5e7eb"/>
+      <text x="50%" y="50%" text-anchor="middle" fill="#000" font-size="24">
         ${articleItem.name.substring(0, 10)}
       </text>
     </svg>
@@ -244,13 +244,13 @@ const formatDate = (dateStr: string) => {
 .articles-list-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
+  color: #000;
   margin: 0 0 0.5rem 0;
 }
 
 .articles-list-count {
   font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: #000;
   margin: 0;
 }
 
@@ -315,7 +315,7 @@ const formatDate = (dateStr: string) => {
 .article-card-title {
   font-size: 1.75rem;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.95);
+  color: #000;
   margin: 0 0 0.75rem 0;
   line-height: 1.4;
   overflow: hidden;
@@ -325,7 +325,7 @@ const formatDate = (dateStr: string) => {
 
 .article-card-excerpt {
   font-size: 1rem;
-  color: rgba(0, 0, 0, 0.6);
+  color: #000;
   margin: 0 0 1.25rem 0;
   line-height: 1.6;
   overflow: hidden;
@@ -350,7 +350,7 @@ const formatDate = (dateStr: string) => {
 
 .article-card-tag {
   font-size: 0.875rem;
-  color: rgba(0, 0, 0, 0.7);
+  color: #000;
   background: rgba(0, 0, 0, 0.05);
   padding: 0.375rem 0.75rem;
   border-radius: 0.5rem;
@@ -359,7 +359,7 @@ const formatDate = (dateStr: string) => {
 
 .article-card:hover .article-card-tag {
   background: rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.9);
+  color: #000;
 }
 
 .article-card-meta {
@@ -367,7 +367,7 @@ const formatDate = (dateStr: string) => {
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.875rem;
-  color: rgba(0, 0, 0, 0.5);
+  color: #000;
 }
 
 .article-card-meta span {

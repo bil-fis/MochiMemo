@@ -6,6 +6,7 @@ import yaml from 'js-yaml'
 import { defaultConfig } from './src/core/config/default'
 import type { SiteConfig } from './src/core/config/schema'
 import mochimemoThemePlugin from "./vite-plugin-mochimemo-theme"
+import mochimemoArticlesPlugin from "./vite-plugin-mochimemo-articles"
 import UnoCSS from '@unocss/vite'
 
 function loadUserConfig(): SiteConfig {
@@ -54,6 +55,7 @@ export default defineConfig({
   plugins: [
       vue(),
   mochimemoThemePlugin(blogConfig.theme),
+      mochimemoArticlesPlugin(blogConfig),
       UnoCSS()
   ],
   define: {

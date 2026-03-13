@@ -1,6 +1,7 @@
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.min.css'
+import anchor from 'markdown-it-anchor'
 
 const md = new MarkdownIt({
     html: true,
@@ -8,6 +9,8 @@ const md = new MarkdownIt({
     linkify: true,
     typographer: true,
 })
+
+md.use(anchor)
 
 md.renderer.rules.fence = (tokens, idx) => {
     const token = tokens[idx]

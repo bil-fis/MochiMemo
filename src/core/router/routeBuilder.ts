@@ -27,16 +27,27 @@ export function getThemePages(){
  */
 export function buildUserRoutes(config: SiteConfig): RouteRecordRaw[] {
     const userRoutes = config.routes || []
+    const pagesDir = config.content?.local?.pagesDir || 'contents/pages'
 
     return userRoutes.map(routeDef => {
         const meta: RouteMeta = {
             type: 'custom',
-            title: routeDef.name||'自定义页面',
+            title: routeDef.name || '自定义页面',
         }
 
         if ('file' in routeDef) {
             meta.source = 'local'
-            meta.file = routeDef.file
+
+            // 处理文件路径
+            const file = routeDef.file
+            if (file.startsWith('pages/')) {
+                // 如果以 pages/ 开头，替换为配置中的 pagesDir
+                const relativePath = file.replace(/^pages\//, '')
+                meta.file = `${pagesDir}/${relativePath}`
+            } else {
+                // 否则使用项目根目录
+                meta.file = file
+            }
         }
 
         if ('issue' in routeDef) {
@@ -56,21 +67,32 @@ export function buildUserRoutes(config: SiteConfig): RouteRecordRaw[] {
  * 内置路由：文章、分类、标签等
  */
 export function buildBuiltinRoutes(): RouteRecordRaw[] {
+    // 动态导入文章模块（确保在客户端运行时加载）
+    // 这个导入由 Vite 插件处理，返回所有文章数据
+    let articles: any[] = []
+    try {
+        const articlesModule = import('virtual:mochimemo-articles')
+        // 注意：这里不能直接使用 await，因为这是构建时执行的
+        // 实际的文章数据会在客户端通过 initArticles 初始化
+    } catch (e) {
+        console.warn('Failed to load articles module:', e)
+    }
+
     return [
         {
             path: '/posts/:slug?',
             component: themePages.PostsPage,
-            meta: { type: 'post',title:'文章' } as RouteMeta,
+            meta: { type: 'post', title: '文章' } as RouteMeta,
         },
         {
             path: '/categories/:slug?',
             component: themePages.CategoryPage,
-            meta: { type: 'category',title:'分类' } as RouteMeta,
+            meta: { type: 'category', title: '分类' } as RouteMeta,
         },
         {
             path: '/tags/:slug?',
             component: themePages.TagPage,
-            meta: { type: 'tag',title:'标签' } as RouteMeta,
+            meta: { type: 'tag', title: '标签' } as RouteMeta,
         },
     ]
 }

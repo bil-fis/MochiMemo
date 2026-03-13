@@ -5,9 +5,9 @@ logo: path/to/logo.png
 
 content:
   local:
-    enabled:
+    enabled: true
     postsDir: contents/posts
-    pagesDir: content/pages
+    pagesDir: contents/pages
   git:
     enabled:
     platform: github
@@ -43,10 +43,10 @@ plugins:
 themeConfig:
   leftnav:
     selfDescription: 你所love的，就是你的live
-    pos:
-    work:
-    school:
-    email:
+    pos: 二相乐园
+    work: 姬霓太美
+    school: 绘世学院
+    email: 114514@unknown.oiiai
     avatar:
     contacts:
       github:
@@ -57,12 +57,14 @@ themeConfig:
     links:
       - name: 首页
         url: /
+      - name: 文章
+        url: /posts
       - name: 分类
         url: /categories
       - name: 标签
         url: /tags
   footer:
-    startYear: 2020
+    startYear: 2026
     ICP:
       detail:
       url:
@@ -71,3 +73,12 @@ themeConfig:
       detail:
       url:
       ico:
+  tags:
+    - name: test
+      thumb:
+  category:
+    - name: 技术
+      thumb:
+    - name: 随笔
+      thumb:
+  backgroundImage: https://api.imlazy.ink/img

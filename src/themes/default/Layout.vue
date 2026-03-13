@@ -307,7 +307,7 @@ const scrollToHeading = (id: string) => {
     <!-- 页脚 -->
     <footer class="home-footer">
       <div class="home-footer-inner">
-        <p class="home-footer-copyright">© {{ copyrightYear }} {{ config.author || 'Your Name' }} Powered by MochiMemo</p>
+        <p class="home-footer-copyright">© {{ copyrightYear }} {{ config.author || 'Your Name' }} Powered by <a href="https://github.com/bil-fis/MochiMemo" target="_blank">MochiMemo</a></p>
         <div class="home-footer-links">
           <a v-if="icpDetail" :href="icpUrl" class="home-footer-link" target="_blank" rel="noopener noreferrer">
             <span v-if="icpIcon" :class="icpIcon"></span>

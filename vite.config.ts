@@ -7,6 +7,7 @@ import { defaultConfig } from './src/core/config/default'
 import type { SiteConfig } from './src/core/config/schema'
 import mochimemoThemePlugin from "./vite-plugin-mochimemo-theme"
 import mochimemoArticlesPlugin from "./vite-plugin-mochimemo-articles"
+import mochimemoIconPlugin from "./vite-plugin-mochimemo-icon"
 import UnoCSS from '@unocss/vite'
 import {VitePWA} from "vite-plugin-pwa";
 
@@ -51,34 +52,84 @@ function loadUserConfig(): SiteConfig {
 
 const blogConfig = loadUserConfig()
 
+// 获取图标路径
+let iconPath = blogConfig.logo
+let iconName = 'pwa-icon.png'
+let isUrl = false
+
+if (iconPath) {
+  // 判断是否为网址
+  isUrl = iconPath.startsWith('http://') || iconPath.startsWith('https://')
+
+  if (isUrl) {
+    // 对于网址，使用 URL 本身
+    iconName = iconPath
+  } else {
+    // 对于本地文件，解析路径和文件名
+    iconPath = path.isAbsolute(iconPath) ? iconPath : path.resolve(process.cwd(), iconPath)
+    if (fs.existsSync(iconPath)) {
+      iconName = path.basename(iconPath)
+    }
+  }
+}
+
 // https://vite.dev/config/
+
 export default defineConfig({
+
   plugins: [
+
       vue(),
+
       mochimemoThemePlugin(blogConfig.theme),
+
       mochimemoArticlesPlugin(blogConfig),
+
       UnoCSS(),
+
       VitePWA({
+
         registerType: "autoUpdate",
+
         devOptions: {
+
           enabled: true
+
         },
+
         manifest: {
+
           name: blogConfig.title,
+
           short_name: blogConfig.title,
+
           description: blogConfig.description,
+
           display:"standalone",
+
           scope:"/",
+
           start_url:"/",
+
           icons:[
+
             {
-              src: "/pwa-icon.png",
+
+              src: isUrl ? iconName : `/${iconName}`,
+
               sizes: "512x512",
+
               type:"image/png"
+
             }
+
           ]
+
         },
+
       }),
+
+      mochimemoIconPlugin(blogConfig), // 放在最后，确保在其他插件之后执行
 
   ],
   define: {

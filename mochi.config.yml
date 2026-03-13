@@ -1,7 +1,7 @@
 title: MochiMemo
 description: my project
 author: 林晚晚ss.
-logo: path/to/logo.png
+logo: https://q1.qlogo.cn/g?b=qq&nk=2211717435&s=640
 
 content:
   local:
@@ -81,5 +81,5 @@ themeConfig:
       thumb:
     - name: 随笔
       thumb:
-  backgroundImage: https://api.imlazy.ink/img
-  wapBackgroundImage: https://api.imlazy.ink/img-phone
+  backgroundImage: https://cdn.imlazy.ink:233/img/background/140014451_p0.png
+#  wapBackgroundImage: https://api.imlazy.ink/img-phone

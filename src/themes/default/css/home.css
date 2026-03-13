@@ -70,7 +70,7 @@
 /* 左侧个人简介 */
 .home-profile {
   @apply shrink-0 w-96;
-  @apply bg-white/70 backdrop-blur-xl;
+  @apply bg-white/30 backdrop-blur-xl;
   @apply rounded-2xl p-10;
   @apply shadow-lg;
   @apply flex flex-col items-center text-center;
@@ -132,7 +132,7 @@
 /* 右侧内容框 */
 .home-content {
   @apply flex-1 h-[calc(100vh-18rem-4rem)];
-  @apply bg-white/70 backdrop-blur-xl;
+  @apply bg-white/30 backdrop-blur-xl;
   @apply rounded-2xl p-10;
   @apply shadow-lg;
   @apply overflow-y-auto;
